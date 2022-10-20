@@ -1,0 +1,706 @@
+@charset 'utf-8';
+
+@import 'reset.scss';
+@import 'sub_page.scss';
+
+@import 'community.scss';
+@import 'about.scss';
+@import 'youtube.scss';
+@import 'location.scss';
+@import 'join.scss';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Noto+Sans+KR:wght@500&family=Roboto:wght@400;500&display=swap');
+
+
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+ul,ol,li{list-style: none;}
+a{text-decoration: none;}
+
+//왜안나와?
+
+
+
+.hidden {position: absolute; top: -99999999px; opacity: 0;}
+
+.wrap::after{
+    content: ''; display: block; clear: both;
+}
+
+
+//header
+
+#header{
+    width: 100%; border-bottom: 1px solid #ddd; 
+    padding-bottom: 8px;
+
+    .inner{
+        width: 1180px; height: 120px; margin: 0 auto; position: relative;
+        #skipNavi{
+            li{
+                a{
+                    
+                    display: block;
+                    width: 100%;
+                    height: 40px;
+                    background: darkblue;
+                    font: bold 15px/40px 'Noto Sans KR';
+                    color: #fff;
+                    text-align: center;
+                    position: fixed;
+                    left: 0;
+                     top: -40px;
+                     z-index: 5;
+                }
+                 &.on{
+                     top: 0;
+                     left: 0;
+                     
+                 }
+            }
+        }
+        >h1{
+            position: absolute; left: 0; top: 18px;
+            >a{
+                font: bold 30px/1 'Roboto'; color: #333;
+            }
+        }
+
+        .menuWeb{
+            #gnb{
+                position: absolute; right: 0; bottom: 0;
+                li{
+                    float: left;
+                    a{
+                        width: 170px; height: 50px;
+                        display: block; padding: 15px 30px; 
+                        text-align: center;
+                        font: bold 16px/1.2 'Roboto'; color: #333; letter-spacing: 2;
+                        &:hover{
+                            background: rgba(0, 0, 0, 0.05);
+                            border-radius: 40px;
+                             color: #333;
+                        }
+                    }
+                }
+            }
+            .util{
+                position: absolute; top: 20px; right: 40px;
+                li{
+                    float: left; margin-left: 20px; 
+
+                    a{
+                        font: bold 14px/1 'Roboto'; color: #555;
+                        
+                    }
+                }
+            }
+        }
+        .btnCall{
+            position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
+             display: none;
+             width: 20px; height: 20px;
+            &::before{
+                content: ''; display: block; width: 100%; height: 2px; background: #000;
+                position: absolute; top: 0; left: 0;
+                transition: top 0.5s 0s, transform 0.5s 0.5s;
+            }
+            &::after{
+                content: ''; display: block; width: 100%; height: 2px; background: #000;  position: absolute; bottom: 0; left: 0;  transition: bottom 0.5s 0s, transform 0.5s 0.5s;
+            }
+            span{
+                display: block; width: 100%; height: 2px;background: #000;    position: absolute; top: 50%; left: 0; margin-top: -1px;    transition: 1s;    text-indent: -9999px;
+            }
+            &.on{
+                &::before{
+                    top: 50%; margin-top: -1px; transform: rotate(45deg);
+                }
+                &::after{
+                    bottom: 50%; margin-bottom: -1px; transform: rotate(-45deg);
+                }
+                span{
+                    transform: translateX(100%); opacity: 0;
+                }
+
+            }
+        }
+        .menuMo{
+            width: 270px; height: 100vh; background: #333;  
+            position: fixed; top: 0; left: -270px;    
+            padding: 35px 30px; z-index: 10; transition: 0.5s;
+            &.on{
+                left: 0;
+            }
+            h1{
+                padding-bottom: 30px; border-bottom: 1px solid #666;
+                a{
+                    display: block; font: bold 24px/1 'Roboto'; color: #fff;    text-align: center;
+                }
+                span{
+                    font-size: 12px; color: #aaa;
+                }
+            }
+            #gnbMo{
+                li{
+                    a{
+                        display: block; width: 100%; padding: 20px 0;
+                        border-bottom: 1px solid #444;
+                        font: bold 14px/1 'Roboto'; color: #888; text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//visual
+#visual{
+    width: 100%; height: calc(100vh - 121px);
+    overflow: hidden;
+    background: #000;
+    video{
+        width: 100%; height: 100%; object-fit: cover; opacity: 0.9;
+        position: relative;
+       
+    }
+    // .inner{
+    //     width: 1180px; margin: 0 auto;     position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+        
+
+    // }
+}
+
+
+
+//인기상품
+#product{
+    width: 100%; 
+    position: relative;
+    display: flex;
+    justify-content: center; align-items: center; background: #fff;
+    overflow: hidden;
+
+        .swiper{
+        width: 1400px; 
+        overflow: hidden;
+        //width: 600px; height: 300px;
+        // border: 1px solid #000;
+         margin: 50px auto 150px;         
+        position: relative;
+
+            h1{
+                font: bold 24px/1 'Noto Sans KR'; color: #222; 
+                margin: 30px 0 70px;
+            }
+            span{
+                font: bold 20px/1 'Noto Sans KR'; color: #333; text-align: center; margin: 50px auto 100px;
+            }
+            .swiper-wrapper{
+                .swiper-slide{
+                    margin: 50px auto 0;
+                    width: 100%;
+                    
+                    img{                        
+                        width: 100%;
+                        transition: 0.8s;
+                        margin-bottom: 10px;  
+                                                       
+                    } 
+                    .img1{
+                        width: 100%;
+                        transition: 0.5s;
+                        &:hover{ opacity: 0; }  
+                    }                  
+                    .img2{
+                        position: absolute;
+                        top: 0; left: 0;
+                        opacity: 0;
+                        &:hover{ opacity: 1; }
+                    }  
+
+                    h2{
+                        margin: 5px auto;
+                        text-align: center;
+                        
+                         a{font: bold 16px/1 'Noto Sans KR'; color: #222;}
+                    }
+                    p{ font:  14px/1.2 'Noto Sans KR'; color: #222; float: right;}
+                }                 
+            }
+            
+     }
+     .swiper-button-prev{
+        position: absolute;
+        top: 50%; left: 8%;        
+    } 
+    .swiper-button-next{
+        position: absolute;
+        top: 50%; left: 90%;        
+    } 
+ }
+
+
+//category 링크연결 사진을 링크연결시키기
+#category{
+    width: 100%; padding: 100px 0; background: #eee;
+    .inner{
+        width: 1400px; margin: 0 auto; position: relative;
+        h1{
+            font: bold 24px/1 'Noto Sans KR'; color: #333; margin-bottom: 50px;
+        }
+        .wrap{
+            width: 100%;
+            article{
+                float: left; width: 320px; margin-right: 20px;
+                &:nth-of-type(4){
+                    margin-right: 0;
+                }
+                &:nth-of-type(8){
+                    margin-right: 0;
+                }
+                .pic{
+                    width: 100%; height: 428px; overflow: hidden;
+
+                    img{
+                        width: 100%; height: 100%; object-fit: fill; transition: .5s;
+                        
+                    }
+                    &:hover{
+                        img{
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+                h2{
+                    margin: 10px auto 20px; text-align: center;
+                    a{                        
+                        font: bold 16px/1 'Noto Sans KR'; color: #333;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+// 5번사진 위로 어케 올림? 호버했을때 여러가지 변화주기
+#brand{
+    width: 100%; padding: 100px 0; 
+    .inner{
+        width: 1400px; margin: 0 auto; position: relative;
+        h1{
+            font: bold 24px/1 'Noto Sans KR'; color: #555; margin-bottom: 50px;
+        }
+        .wrap{
+            width: 100%;
+            
+            article{
+                
+                &:nth-of-type(1){
+                    width: 450px; height: 100%; 
+                    float: left; margin-right: 5px; 
+                    padding: 20px; 
+                    img{
+                        width: 100%; height: 100%; object-fit: cover;
+                        border-radius: 30px;
+                    }                    
+                }
+                &:nth-of-type(2){
+                    width: 450px; height: 500px; 
+                    float: left; margin-right: 5px; 
+                    padding: 20px; 
+                    img{
+                        width: 100%; height: 100%; object-fit: cover;
+                        border-radius: 30px;
+                    }                    
+                }
+                &:nth-of-type(3){
+                    width: 450px; height: 100%; 
+                    float: left; 
+                    padding: 20px; 
+                    img{
+                        width: 100%; height: 100%; object-fit: cover;
+                        border-radius: 30px;
+                    }   
+                }
+                &:nth-of-type(4){
+                    width: 450px; height: 100%; 
+                    float: left; margin-right: 5px; 
+                    padding: 20px; 
+                    img{
+                        width: 100%; height: 100%; object-fit: cover;
+                        border-radius: 30px;
+                    }   
+                
+                 }
+                &:nth-of-type(5){
+                    width: 450px; height: 100%; 
+                    float: left; margin-right: 5px; 
+                    padding: 20px;                     
+                    
+                    img{
+                        width: 100%; height: 100%; object-fit: cover;
+                        border-radius: 30px;
+                    }
+                                     
+                }
+                &:nth-of-type(6){
+                    width: 450px; height: 100%; 
+                    float: left; 
+                    padding: 20px; 
+                    img{
+                        width: 100%; height: 100%; object-fit: cover;
+                        border-radius: 30px;
+                    }   
+                }
+                &:nth-of-type(7){
+                    width: 450px; height: 100%; 
+                    float: left; margin-right: 5px; 
+                    padding: 20px; 
+                    img{
+                        width: 100%; height: 100%; object-fit: cover;
+                        border-radius: 30px;
+                    }   
+                
+                 }
+                &:nth-of-type(8){
+                    width: 450px; height: 100%; 
+                    float: left; margin-right: 5px; 
+                    padding: 20px;                     
+                    
+                    img{
+                        width: 100%; height: 100%; object-fit: cover;
+                        border-radius: 30px;
+                    }
+                                     
+                }
+                &:nth-of-type(9){
+                    width: 450px; height: 100%; 
+                    float: left; 
+                    padding: 20px; 
+                    img{
+                        width: 100%; height: 100%; object-fit: cover;
+                        border-radius: 30px;
+                    }   
+                }
+            }
+        }
+    }
+}
+
+#event{
+    width: 100%;
+    padding: 100px 0;
+    background-color: rgba(0, 0, 0, 0.04);
+    .inner{
+        width: 1400px; margin: 0 auto; position: relative;
+        h1{
+            font: bold 22px/1 'Noto Sans KR'; color: #222;
+            border-bottom: 2px solid #888;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+        .wrap{
+            width: 100%;
+            article{
+                float: left; background: rgba(221, 158, 22, 0.05); padding: 30px; box-sizing: border-box;
+                &:nth-of-type(1){
+                    width: 850px; height: 300px; margin-right: 20px;
+                    padding-top: 40px;
+                    background-image: url(../img2/event/lunch.avif);
+                    background-size: cover;
+                    
+
+                    h2{font: bold 14px/1 'Noto Sans KR'; color: #555; margin-bottom: 10px;}
+                    h3{font: bold 30px/1.1 'Noto Sans KR'; color: #222;}
+                    h4{font: normal 20px/1.1 'Noto Sans KR'; color: #444; margin: 20px 0 50px;}
+                    .btn{
+                        display: block; width: 150px; height: 40px;
+                        background: #fff;
+                        text-align: center;
+                        font: bold 12px/40px 'Noto Sans KR'; border-radius: 20px; color: #666;
+                    }
+                }
+                &:nth-of-type(2){
+                    width: 520px; height: 140px; float: right; margin-bottom: 20px;
+                    background-image: url(../img2/event/live.avif);
+                    h2{
+                        font: bold 20px/1 'Noto Sans KR'; color: #fff; margin-bottom: 10px;
+                    }
+                    p{
+                        font: 14px/1.2 'Noto Sans KR'; color: #ddd;
+                    }
+                }
+                &:nth-of-type(3){
+                    width: 520px; height: 140px; float: right; margin-bottom: 20px;
+                    background-image: url(../img2/event/black.avif);
+                    
+                    h2{
+                        font: bold 20px/1 'Noto Sans KR'; color: #222; margin-bottom: 10px;
+                    }
+                    p{
+                        font: 14px/1.2 'Noto Sans KR'; color: #444;
+                    }
+                }
+
+            
+            &::after{
+                content: ''; display: block; clear: both;
+            }}
+        }   
+        
+    }
+}
+
+#banner{
+    width: 100%; padding: 70px 0;
+    background: url(../img2/ikea-footer.svg) no-repeat center/cover fixed;
+    .inner{
+        width: 1180px; margin: 0 auto;
+        h1{
+            font: bold 50px/1 'Roboto'; color: rgba(0, 0, 0, 0.8); text-align: center;    margin-bottom: 30px;
+        }
+        p{
+            font: 20px/1.3 'Noto Sans KR'; color: rgba(0, 0, 0, 0.8); text-align: center; margin-bottom: 50px;
+
+        }
+        h2{
+            font: 15px/1.3 'Noto Sans KR'; color: rgba(0, 0, 0, 0.8); text-align: center;
+        }
+            
+    }
+}
+
+// #comments{
+//     width: 100%; padding: 150px 0; background: #ddd;
+//     .inner{
+//         width: 1180px; margin: 0 auto; 
+//         h1{
+//             font: bold 24px/1 'Roboto'; color: #555; text-align: center; margin-bottom: 50px;
+//         }
+//         ul{
+//             width: 100%;
+//             li{
+//                 width: 100%; border: 1px solid #333; padding: 15px 20px; 
+//                 margin-bottom: 20px;
+//                 &::after{
+//                     content: ''; display: block; clear: both;
+//                 }
+//                 &:hover{
+//                     background: #444; 
+//                     a{
+//                         color: #fff;
+//                     }
+//                     span{
+//                         color: #ddd;
+//                     }
+//                 }
+//                 a{
+//                     font: 12px/1 'Roboto'; color: #555; float: left;  
+//                 }
+//                 span{
+//                     font: 12px/1 'Roboto'; columns: #888; float: right; 
+//                 }
+
+//             }
+//         }
+//     }
+// }
+
+#footer{
+    width: 100%; padding: 50px 0; background: #000;
+    .inner{
+        width: 1180px; margin: 0 auto;
+        &::after{
+            content: ''; display: block; clear: both;
+        }
+        h1{
+            font: bold 20px/1 'Noto Sans KR'; color: #fff; float: left;
+            letter-spacing: 2px;
+        }
+        ul{
+            float: right;
+            li{
+                float: left; margin-left: 20px;
+                a{
+                    font: bold 14px/1 'Noto Sans KR'; color: #999;
+                }
+            }
+        }
+        address{
+            float: left;    width: 100%; font: 14px/1.3 'Noto Sans KR'; color: #777; margin-bottom: 20px;    margin-top: 20px; padding-top: 20px;    border-top: 1px solid #888;
+        }
+        p{
+            float: left;    width: 100%;    font: 12px/1 'Noto Sans KR'; color: #777; 
+        }
+    }
+}
+
+
+//tablet
+@media screen and (max-width:1179px) {
+    //header
+#header{
+    .inner{
+        width: 100%; height: 100px;
+        h1{
+            left: 20px;
+            text-align: center;
+        }
+        .menuWeb{
+            
+                display: none;
+            }
+                      
+
+        .btnCall{
+            display: block;
+        }
+    }
+}
+    //visual
+#visual{
+    height: calc(100vh - 101px);
+    background: url(img/visual1.jpg) no-repeat center/cover;
+    video{
+        display: none;
+    }
+    .inner{
+        width: 100%; padding: 0px 30px;
+        h1{
+            font: normal 14vmin/1 'Roboto';
+        }
+        a{
+            width: 100%;
+        }
+    }
+}
+    //news
+#news{
+    padding: 100px 30px;
+    .inner{
+        width: 100%;
+        .wrap{
+            article{
+                width: 49%; margin-right: 2%; margin-bottom: 60px;
+                &:nth-of-type(2n){
+                    margin-right: 0;
+                }
+                .pic{
+                    height: 20vmax;
+                }
+            }
+        }
+    }
+}
+    //brand
+
+#brand{
+    padding: 100px 30px;
+    .inner{
+        width: 100%;
+        .wrap{
+            article{
+                &:nth-of-type(1){
+                    width: 49%; margin-right: 2%;
+                }
+                &:nth-of-type(2){
+                    width: 49%;    margin-right: 0px; margin-bottom: 20px;
+                }
+                &:nth-of-type(3){
+                    width: 49%;
+                }
+                &:nth-of-type(4){
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+    //banner
+#banner{
+    padding: 150px 30px; 
+    .inner{
+        width: 100%;
+    }
+}
+    //comments
+#comments{
+    padding: 100px 30px;
+    .inner{
+        width: 100%;
+    }
+}
+    //footer
+#footer{
+    padding: 80px 30px;
+    .inner{
+        width: 100%;
+    }
+}
+}
+
+//mobile
+@media screen and (max-width:539px) {
+    //header
+
+    //visual
+#visual{
+    .inner{
+        h1{
+            font: normal 12vmin/1 'Roboto';
+        }
+    }
+}
+
+    //
+#category{
+    .inner{
+        .wrap{
+            article{
+                width: 100%; margin-right: 0%;
+                .pic{
+                    height: 30vmax;
+                }
+            }
+        }
+    }
+}
+
+    //brand
+#brand{
+    .inner{
+        .wrap{
+            article{
+                &:nth-of-type(1){
+                    width: 100%; height: 400px; padding: 50px; margin-right: 0%; margin-bottom: 20px;
+                }
+                &:nth-of-type(2){
+                    width: 100%;
+                }
+                &:nth-of-type(3){
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+    //banner
+
+    //comments
+
+    //footer
+#footer{
+    .inner{
+        h1{
+            margin-bottom: 20px;
+        }
+        ul{
+            width: 100%;
+            li{
+                margin-left: 0px; margin: 5px;
+            }
+        }
+    }
+}
+}

@@ -1,0 +1,136 @@
+.community{
+    .sub_vidual{
+        background: url(../img/brand3.jpg) no-repeat center/cover;
+    }
+    .inner{
+        table{
+            width: 100%;
+            border-bottom: 2px solid #111;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+
+            tr{
+                &:nth-of-type(even){
+                    background: #eee;
+                }
+                &:hover{
+                    background: lightcyan;
+                }
+                th{
+                    padding: 15px; background: #444; color: #fff;
+                    &:nth-of-type(1){width: 10%;}
+                    &:nth-of-type(3){width: 15%;}
+                    &:nth-of-type(4){width: 15%;}
+                }
+                td{
+                    padding: 13px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: center;
+
+                    &:nth-of-type(2){
+                        text-align: left;
+                    }
+                    &:nth-of-type(3){
+                        font-family: "맑은 고딕";
+                    }
+                    a{
+                        color: #333; font-family: 'arial'; line-height: 1.4;
+                    }
+
+                }
+            }
+        }
+
+        .pagination{
+            width: 100%; text-align: center;
+            &::after{content: ''; display: block; clear: both;}
+
+            .prev{
+                float: left; display: block; width: 30px; height: 30px;
+                font-size: 20px; text-align: center;
+                line-height: 30px;
+                background: #555; color: #eee;
+            }
+            .next{
+                float: right;
+                display: block; width: 30px; height: 30px;
+                font-size: 20px; text-align: center;
+                line-height: 30px;
+                background: #555; color: #fff;
+            }
+            .numbers{
+                display: inline-block; text-align: center;
+                a{
+                    border: 1px solid #888;
+                    display: inline-block;
+                    width: 30px; height: 30px; font: 11px/30px 'arial'; color: #666;
+                    margin: 0 5px; transition: 0.5s;
+                    &:hover{
+                        background: #666; color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// tablet 영역
+
+@media screen and (max-width:1179px) {
+    .community{
+        .inner{
+            table{
+                tr{
+                    th{
+                        &:nth-of-type(1){
+                            width: 14%;
+                        }
+                        &:nth-of-type(3){
+                            width: 17%;
+                        }
+                        &:nth-of-type(4){
+                            width: 0%; display: none;
+                        }
+                    }
+                    td{
+                        &:nth-of-type(4){display: none;}
+                    }
+                }
+            }
+            .pagination{
+                .numbers{
+                    a{
+                        @for $i from 6 through 10{
+                            &:nth-of-type(#{$i}){display: none;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// mobile 영역
+@media screen and (max-width: 539px) {
+    .community{
+        .inner{
+            table{
+                tr{
+                    th{
+                        font-size: 14px;
+                        &:nth-of-type(1){width: 0%; display: none;}
+                        &:nth-of-type(3){width: 29%;}
+                    }
+                    td{
+                        &:nth-of-type(1){display: none;}
+                    }
+                }
+            }
+            .pagination{
+                .numbers{
+                    display: none;
+                }
+            }
+        }
+    }
+}
