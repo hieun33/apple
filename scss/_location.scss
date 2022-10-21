@@ -19,12 +19,13 @@
                 float: left; margin-right: 10px;
                 a{
                     display: block; width: 200px; height: 40px;
-                    background: #555;
-                    font: bold 12px/40px '맑은 고딕'; color: #fff;
+                    background: #fff;
+                    font: bold 12px/40px '맑은 고딕'; color: #555;
                     text-align: center; border: 1px solid #555; 
                 }
                 &.on a{
-                    background: #fff; color: #333;
+                    background: #333; color: #fff;
+                    border: 1px solid #fff; 
                 }
             }
         }
@@ -33,15 +34,17 @@
             float: right;
             li{
                 float: left; margin-left: 10px;
+                border: 1px solid #555; 
                 a{
                     display: block; width: 200px; height: 40px;
-                    background: #555;
-                    font: bold 12px/40px '맑은 고딕'; color: #fff;
+                    background: #fff;
+                    font: bold 12px/40px '맑은 고딕'; color: #555;
                     text-align: center;
-                    border: 1px solid #555;
+                    
                 }
                 &.on a{
-                    background: #fff; color: #333;
+                    background: #333; color: #fff;
+                    border: 1px solid #555; 
                 }
             }
     

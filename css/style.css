@@ -500,31 +500,33 @@ a {
         display: block;
         width: 200px;
         height: 40px;
-        background: #555;
+        background: #fff;
         font: bold 12px/40px '맑은 고딕';
-        color: #fff;
+        color: #555;
         text-align: center;
         border: 1px solid #555; }
       .location .inner .traffic li.on a {
-        background: #fff;
-        color: #333; }
+        background: #333;
+        color: #fff;
+        border: 1px solid #fff; }
   .location .inner .branch {
     float: right; }
     .location .inner .branch li {
       float: left;
-      margin-left: 10px; }
+      margin-left: 10px;
+      border: 1px solid #555; }
       .location .inner .branch li a {
         display: block;
         width: 200px;
         height: 40px;
-        background: #555;
-        font: bold 12px/40px '맑은 고딕';
-        color: #fff;
-        text-align: center;
-        border: 1px solid #555; }
-      .location .inner .branch li.on a {
         background: #fff;
-        color: #333; }
+        font: bold 12px/40px '맑은 고딕';
+        color: #555;
+        text-align: center; }
+      .location .inner .branch li.on a {
+        background: #333;
+        color: #fff;
+        border: 1px solid #555; }
 
 @media screen and (max-width: 1179px) {
   .location .inner #map {
@@ -850,7 +852,7 @@ a {
           border-radius: 30px; }
       #brand .inner .wrap article:nth-of-type(2) {
         width: 450px;
-        height: 500px;
+        height: 585px;
         float: left;
         margin-right: 5px;
         padding: 20px; }

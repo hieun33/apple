@@ -19,25 +19,25 @@ var markerOptions = [
     {
         title:"이케아광명점",
         latlag: new kakao.maps.LatLng(37.4241326, 126.8828773),
-        imgSrc: 'img/marker1.png',
-        imgSize: new kakao.maps.Size(232, 99),
-        imgPos: {offset: new kakao.maps.Point(116, 69)},
+        imgSrc: '../img2/img/marker.png',
+        imgSize: new kakao.maps.Size(100 ,100),
+        imgPos: {offset: new kakao.maps.Point(50, 120)},
         button : branch_btns[0]
     },
     {
         title:"이케아고양점",
         latlag: new kakao.maps.LatLng(37.6299601, 126.8629739),
-        imgSrc: 'img/marker1.png',
-        imgSize: new kakao.maps.Size(232, 99),
-        imgPos: {offset: new kakao.maps.Point(116, 69)},
+        imgSrc: '../img2/img/marker.png',
+        imgSize: new kakao.maps.Size(100 ,100),
+        imgPos: {offset: new kakao.maps.Point(40, 80)},
         button : branch_btns[1]
     },
     {
         title:"이케아기흥점",
         latlag:new kakao.maps.LatLng(37.2226337,127.116102),
-        imgSrc: 'img/marker1.png',
-        imgSize: new kakao.maps.Size(232, 99),
-        imgPos: {offset: new kakao.maps.Point(116, 69)},
+        imgSrc: '../img2/img/marker.png',
+        imgSize: new kakao.maps.Size(100 ,100),
+        imgPos: {offset: new kakao.maps.Point(70, 80)},
         button : branch_btns[2]
     }
     
