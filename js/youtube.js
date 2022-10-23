@@ -14,6 +14,7 @@ fetch(url)
     .then(data=>{
         return data.json();
     })
+    
     .then(json=>{
         let items = json.items;
         console.log(items);
