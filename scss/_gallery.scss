@@ -1,30 +1,36 @@
 #gallery{
+    
     #searchBox{
         width: 100%; padding: 50px; font-size: 0;
+        
         #search{
-            width: 300px; height: 30px; border: 1px solid #333; padding-left:10px;
-
+            width: 300px; height: 30px; 
+            border: 1px solid #333; padding-left:10px;
+            border-radius: 5px;
+            
         }
         .btnSearch{
             width: 80px; height: 30px;
-            background: #333; font: bold 12px/30px 'arial'; color: #fff;
+            background: #333; font:  12px/30px 'NOTO SANS KR'; color: #fff;
             text-align: center;
             border:none; cursor: pointer; margin-left: 10px; 
             vertical-align: top;
+            border-radius: 5px;
         }
     }
     #wrap{
         width: 100%; padding: 50px;
         .loading{
-            width: 100px;
+            width: 500px;
             position: fixed; top: 50%; left: 50%;
             transform: translate(-50%,-50%);
             transition: 1s;
+            opacity: 0.3;
             &.off{opacity: 0;}
         }
         #list{
             width: 100%;
-            opacity: 0; transform: translateY(100px); transition: 1s;
+            opacity: 0; transform: translateY(100px); transition: 3s;
             &.on{
                 opacity: 1; transform: translateY(0px);
             }
@@ -32,29 +38,41 @@
                 content: ''; display: block; clear: both;
             }
             li{
-                float: left; width: calc(100% / 4); padding: 10px;
+                float: left; width: calc(100% / 3); padding: 10px;
+                border-radius: 5px;
                 div{
                     width: 100%; padding: 20px;
                     box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
                     border-radius: 5px;
+                    &::after{
+                        content: ''; display: block; clear: both;
+                    }
                     a{
                         >img{
                             width: 100%; filter: grayscale(100%);
+                            border-radius: 5px;
                         }
                     }
                     p{
-                        font: 12px/1.2 'arial'; color: #777;
+                        font: 16px/1.2 'NOTO SANS KR'; color: #777;
                         margin-top: 10px; margin-bottom: 10px;
                     }
 
                     span{
                         display: block; align-items: center; margin-top: 10px;
+                        float: right;
                         >img{
-                            width: 20px; height: 20px; border-radius: 50%;
+                            width: 25px; height: 25px; border-radius: 40%;
                             margin-right: 5px;
                         }
                         strong{
-                            font: 11px/1 'arial'; color: orange;
+                            font: 13px/1 'NOTO SANS KR'; color: #333;
+                            
+                            
+                            &:hover{
+                                color: orange;
+                                cursor: auto;
+                            }
                         }
                     }
                     &:hover a>img{filter: grayscale(0%);}
@@ -65,7 +83,7 @@
 }
 aside{
     width: 100%; height: 100vh;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.7);
     position: fixed; top: 0; left: 0;
     padding: 5vw;
     display: flex; justify-content: center; align-items: center;
@@ -78,7 +96,10 @@ aside{
     }
     .close{
         position: absolute;
-        top: 20px; right: 20px; color: #fff;
+        top: 10%; right: 10%; 
+        font: bold 16px/1 'NOTO SANS KR';
+        color: #fff;
+        cursor: pointer;
     }
 }
 

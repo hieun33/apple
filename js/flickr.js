@@ -126,7 +126,7 @@ function callData(url){
                 loading.classList.add("off");
 
                 const errMsgs = frame.parentElement.querySelectorAll("p");
-        if(errMsgs.length >0) frame.parentElement.querySelector("p").remove();  
+        if(errMsgs.length <0) frame.parentElement.querySelector("p").remove();  
                 
                 const errMsg = document.createElement("p");
                 errMsg.append("검색하신 검색어의 이미지가 없습니다.");

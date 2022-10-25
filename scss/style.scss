@@ -281,7 +281,7 @@ a{text-decoration: none;}
     }
 }
 
-// 홈인테리어아이디어보기 hover했을때 변화
+// 홈인테리어아이디어보기 hover했을때 변화? 효과 어떻게 줄지?
 #brand{
     width: 100%; padding: 100px 0; 
     .inner{
@@ -298,16 +298,37 @@ a{text-decoration: none;}
                 padding: 20px; 
                     img{
                         width: 100%; height: 100%; object-fit: cover;
-                        border-radius: 20px;                        
+                        border-radius: 20px;  
+                                          
                     }
-                    
-                    
+                    &:nth-of-type(2){
+                        &:hover{
+                        filter:grayscale(70%);}
+                    }
+                    &:nth-of-type(4){
+                        width: 450px; height: 100%; 
+                        float: left; margin-right: 5px; 
+                        padding: 20px;  position: relative;                        
+                        >img{
+                            width: 100%; height: 100%; object-fit: cover;
+                            border-radius: 20px; 
+                        }
+                        &::after{
+                            content: ''; display: block; width: 100%; height: 100%;    position: absolute; top: 0; left: 0;    background: linear-gradient(45deg, rgba(255,192,203,0.4), rgba(173,216,230,0.4));    opacity: 0; transition: 0.5s;
+                                                                               
+
+                        }
+                        &:hover{
+                            &::after{
+                                opacity: 1;                          
+                            }
+                        }                           
+                    }                                       
+                }
             }
-          
-            
         }
     }
-}
+
 
 #event{
     width: 100%;
@@ -363,6 +384,7 @@ a{text-decoration: none;}
                         font: 14px/1.2 'Noto Sans KR'; color: #444;
                     }
                 }
+                
 
             
             &::after{
