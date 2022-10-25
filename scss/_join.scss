@@ -1,5 +1,71 @@
+.hidden{position: absolute; top: -9999999px; opacity: 0;}
+
 .join{
     .sub_vidual{
         background: url(../img/insta1.jpg) no-repeat center/cover;
+    }
+}
+
+#join{
+    width: 100%; padding: 150px 0;
+
+    .inner{
+        width: 1180px; margin: 0 auto;
+
+        h1{
+            font: normal 60px/1 'Raleway'; color: #555; margin-bottom: 50px;
+        }
+        fieldset{
+            border: none;
+        }
+        table{
+            border-top: 2px solid #333;
+            border-bottom: 2px solid #333;
+
+            th,td{
+                border-bottom: 1px solid #ddd;
+                padding: 15px 25px;
+            }
+            th{
+                width: 20%;
+                input[type=reset], input[type=submit]{
+                    width: 30%; height: 40px;
+                    border: 1px solid #333; margin: 10px;
+                    font: bold 14px/40px 'arial';
+                    color: #555;
+                    cursor: pointer;
+                    transition: 0.5s;
+                    &:hover{
+                        background: #333;
+                        color: #fff;
+                    }
+                }
+            }
+            td{
+                border-left: 1px solid #aaa;
+                input[type=text], input[type=password],select{
+                    width: 40%; background: rgba(0,0,0,0.03);
+                    padding: 10px;
+                    border: 1px solid #aaa;
+                }
+                input[type=radio], input[type=checkbox]{
+                    margin-right: 30px;
+                }
+                textarea{
+                    resize: none;
+                    width: 60%; height: 150px;
+                    background: rgba(0,0,0,0.03);
+                    padding: 10px;
+                    border: 1px solid #aaa;
+                }
+
+                //동적으로 생성될 에러 메세지 스타일
+                p{
+                    font: 11px/1 '맑은 고딕';
+                    color: hotpink;
+                    margin-top: 5px;
+                }
+            }
+        }
     }
 }

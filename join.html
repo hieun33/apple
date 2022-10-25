@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+    <title>sub_page</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/c12878d3ba.js" crossorigin="anonymous"></script>
     <script defer src="js/main.js"></script>
@@ -12,20 +12,20 @@
 <body>
     <header id="header_sub">
         <div class="inner">
-             <h1><a href="index.html">
+            <h1><a href="index.html">
                 <img src="img2/ikea-logo.svg" alt="이케아로고">
             </a></h1>
-            
+
             <nav class="menuWeb">
                 <ul id="gnb">
-                    <li><a href="about.html">ABOUT</a></li>                 
-                    <li><a href="product.html">PRODUCT</a></li> 
+                    <li><a href="about.html">ABOUT</a></li>                    
+                    <li><a href="gallery.html">GALLERY</a></li> 
                     <li><a href="youtube.html">YOUTUBE</a></li>              
                     <li><a href="community.html">COMMUNITY</a></li>
                     <li><a href="location.html">LOCATION</a></li>
                 </ul>
 
-                <ul class="util">
+                <ul class="util">                    
                     <li><a href="#">login</a></li>
                     <li><a href="join.html">join</a></li>
                     <li>
@@ -48,14 +48,14 @@
             </a>
 
             <nav class="menuMo">
-                <h1><a href="index.html">
-                    <img src="img2/ikea-logo.svg" alt="이케아로고">
-                    <span>ENJOY IKEA</span>
-                </a></h1>
+                <h1>
+                    <a href="index.html"><img src="img2/ikea-logo.svg" alt="이케아로고">
+                        <span>ENJOY IKEA</span></a>
+                </h1>
 
                 <ul id="gnbMo">
-                    <li><a href="about.html">ABOUT</a></li>                     
-                    <li><a href="product.html">PRODUCT</a></li> 
+                    <li><a href="about.html">ABOUT</a></li>                    
+                    <li><a href="gallery.html">GALLERY</a></li> 
                     <li><a href="youtube.html">YOUTUBE</a></li>              
                     <li><a href="community.html">COMMUNITY</a></li>
                     <li><a href="location.html">LOCATION</a></li>
@@ -64,10 +64,108 @@
         </div>
     </header>
 
-    <section class="content join">
+    <section class="join">
         <div class="sub_vidual"></div>
         <div class="inner">
-            <h1>JOIN <span>회원가입</span></h1>
+            <h1>MEMBERSHIP</h1>
+
+            <form action="result.html" method="get" id="member">
+                <fieldset>
+                    <legend class="hidden">회원가입 폼 입력 양식</legend>
+
+                    <table>
+                        <caption class="hidden">회원가입을 위한 아이디, 비밀번호, 이메일, 성별, 학력, 취미, 남기는 말 입력 테이블</caption>
+
+                        <tbody>
+                            <!-- userId -->
+
+                            <tr>
+                                <th scope="row"><label for="userid">User Id</label></th>
+                                <td>
+                                    <input type="text" name="userid" id="userid" placeholder="아이디를 입력하세요">
+                                </td>
+                            </tr>
+
+                            <!-- password -->
+                            <tr>
+                                <th scope="row"><label for="pwd1">Password</label></th>
+                                <td>
+                                    <input type="password" name="pwd1" id="pwd1" placeholder="비밀번호를 입력하세요">
+                                </td>
+                                <p></p>
+                            </tr>
+
+                            <tr>
+                                <th scope="row"><label for="pwd2">Re Password</label></th>
+                                <td>
+                                    <input type="password" name="pwd2" id="pwd2" placeholder="비밀번호를 재입력하세요">
+                                </td>
+                            </tr>
+                            <!-- email -->
+                            <tr>
+                                <th scope="row"><label for="email">E-mail</label></th>
+                                <td>
+                                    <input type="text" name="email" id="email" placeholder="이메일 주소를 입력하세요">
+                                </td>
+                            </tr>
+                            <!-- education -->
+                            <tr>
+                                <th scope="row"><label for="edu">Education</label></th>
+                                <td>
+                                    <select name="edu" id="edu">
+                                        <option value="">선택해주세요</option>
+                                        <option value="elemantary">초등학교 졸업</option>
+                                        <option value="middle">중학교 졸업</option>
+                                        <option value="high">고등학교 졸업</option>
+                                        <option value="college">대학교 졸업</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <!-- gender -->
+                            <tr>
+                                <th scope="row">Gender</th>
+                                <td>
+                                    <label for="male">Male</label>
+                                    <input type="radio" name="gender" id="male">
+                                    <label for="female">Female</label>
+                                    <input type="radio" name="gender" id="female">
+                                </td>
+                            </tr>
+                            <!-- innerest -->
+                            <tr>
+                                <th scope="row">Interests</th>
+                                <td>
+                                    <label for="sports">Sports</label>
+                                    <input type="checkbox" name="hobby" id="sports" value="sports">
+
+                                    <label for="music">Music</label>
+                                    <input type="checkbox" name="hobby" id="music" value="music">
+
+                                    <label for="game">Game</label>
+                                    <input type="checkbox" name="hobby" id="game" value="game">
+
+                                    <label for="reading">Reading</label>
+                                    <input type="checkbox" name="hobby" id="reading" value="reading">
+                                </td>
+                            </tr>
+                            <!-- comments -->
+                            <tr>
+                                <th scope="row"><label for="comments">Comments</label></th>
+                                <td>
+                                    <textarea name="comments" id="comments" placeholder="남기는 말을 입력하세요"></textarea>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">
+                                    <input type="reset" value="cancle">
+                                    <input type="submit" value="submit">
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </form>
         </div>
     </section>
 
