@@ -4,12 +4,12 @@ const key = "89aae050d1d8c006bdb5bf866029199d";
 const method1 = "flickr.interestingness.getList";
 const method2 = "flickr.photos.search";
 const base = "https://www.flickr.com/services/rest?";
-const per_page = 20;
+const per_page = 30;
 const format = "json";
 
 //
 const url1 = `${base}method=${method1}&api_key=${key}&per_page=${per_page}&format=${format}&nojsoncallback=1`;
-const url2 = `${base}method=${method2}&api_key=${key}&per_page=${per_page}&format=${format}&nojsoncallback=1&tags=바다&privacy_filter=1`;
+const url2 = `${base}method=${method2}&api_key=${key}&per_page=${per_page}&format=${format}&nojsoncallback=1&tags=이케아&privacy_filter=1`;
 
 const body = document.querySelector("body");
 const frame = document.querySelector("#list");
@@ -17,7 +17,7 @@ const loading = document.querySelector(".loading");
 const input = document.querySelector("#search");
 const btn = document.querySelector(".btnSearch");
 
-callData(url1);
+callData(url2);
 
 btn.addEventListener("click",()=>{
     let tag = input.value;

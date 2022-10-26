@@ -1,15 +1,18 @@
+
 .youtube{
     .sub_vidual{
         background: #888;
     }
 
     .inner{
+        
         .vidList{
             width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-content: flex-start;
+            padding-top: 20px;
 
             article{
                 width: 48%;
@@ -28,13 +31,18 @@
                     width: 100%; height: 40%; padding: 20px;
 
                     h2{
-                        font: bold 20px/1.2 'arial'; color: #444; margin-bottom: 15px;
+                        font: bold 20px/1.2 'NOTO SANS KR'; color: #444; margin-bottom: 10px;
+                        padding-bottom: 10px;
                     }
                     p{
-                        font: 14px/1.4 'arial'; color: #666;
+                        font: 14px/1.4 'NOTO SANS KR'; color: #666;
+
+                        
                     }
                     span{
-                        font: bold 16px/1 'arial'; color: orange;
+                        font: bold 16px/1 'NOTO SANS KR'; color: #888;
+                        padding-top: 20px;
+                        float: right;
                     }
                 }
             }

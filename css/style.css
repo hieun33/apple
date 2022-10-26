@@ -487,7 +487,8 @@ aside {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: flex-start; }
+  align-content: flex-start;
+  padding-top: 20px; }
   .youtube .inner .vidList article {
     width: 48%;
     height: 400px;
@@ -506,15 +507,18 @@ aside {
       height: 40%;
       padding: 20px; }
       .youtube .inner .vidList article .con h2 {
-        font: bold 20px/1.2 'arial';
+        font: bold 20px/1.2 'NOTO SANS KR';
         color: #444;
-        margin-bottom: 15px; }
+        margin-bottom: 10px;
+        padding-bottom: 10px; }
       .youtube .inner .vidList article .con p {
-        font: 14px/1.4 'arial';
+        font: 14px/1.4 'NOTO SANS KR';
         color: #666; }
       .youtube .inner .vidList article .con span {
-        font: bold 16px/1 'arial';
-        color: orange; }
+        font: bold 16px/1 'NOTO SANS KR';
+        color: #888;
+        padding-top: 20px;
+        float: right; }
 .youtube .inner figure.pop {
   width: 100%;
   height: 100vh;
@@ -534,6 +538,18 @@ aside {
     color: #fff;
     cursor: pointer; }
 
+.community .sub_vidual {
+  position: relative; }
+  .community .sub_vidual a {
+    display: flex-wrap;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font: 14px 'NOTO SANS KR';
+    color: #fff; }
 .community .inner table {
   width: 100%;
   border-bottom: 2px solid #111;
@@ -560,10 +576,10 @@ aside {
     .community .inner table tr td:nth-of-type(2) {
       text-align: left; }
     .community .inner table tr td:nth-of-type(3) {
-      font-family: "맑은 고딕"; }
+      font-family: 'NOTO SANS KR'; }
     .community .inner table tr td a {
       color: #333;
-      font-family: 'arial';
+      font-family: 'NOTO SANS KR';
       line-height: 1.4; }
 .community .inner .pagination {
   width: 100%;
@@ -600,7 +616,7 @@ aside {
       display: inline-block;
       width: 30px;
       height: 30px;
-      font: 11px/30px 'arial';
+      font: 11px/30px 'NOTO SANS KR';
       color: #666;
       margin: 0 5px;
       transition: 0.5s; }
@@ -646,7 +662,8 @@ aside {
     width: 100%;
     height: 500px;
     border: 1px solid #000;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    border-radius: 10px; }
   .location .inner::after {
     content: '';
     display: block;
@@ -664,7 +681,8 @@ aside {
         font: bold 12px/40px '맑은 고딕';
         color: #555;
         text-align: center;
-        border: 1px solid #555; }
+        border: 1px solid #555;
+        border-radius: 10px; }
       .location .inner .traffic li.on a {
         background: #333;
         color: #fff;
@@ -674,7 +692,8 @@ aside {
     .location .inner .branch li {
       float: left;
       margin-left: 10px;
-      border: 1px solid #555; }
+      border: 1px solid #555;
+      border-radius: 10px; }
       .location .inner .branch li a {
         display: block;
         width: 200px;
@@ -682,11 +701,13 @@ aside {
         background: #fff;
         font: bold 12px/40px '맑은 고딕';
         color: #555;
-        text-align: center; }
+        text-align: center;
+        border-radius: 10px; }
       .location .inner .branch li.on a {
         background: #333;
         color: #fff;
-        border: 1px solid #555; }
+        border: 1px solid #555;
+        border-radius: 10px; }
 
 @media screen and (max-width: 1179px) {
   .location .inner #map {

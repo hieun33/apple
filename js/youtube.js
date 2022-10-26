@@ -31,7 +31,7 @@ fetch(url)
 
             let con = item.snippet.description;
             if(con.length > 100){
-                con = con.substr(0,100) + "...";
+                con = con.substr(0,95) + "...";
             }
 
             let date = item.snippet.publishedAt;
